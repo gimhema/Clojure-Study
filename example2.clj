@@ -129,9 +129,31 @@
     ) 
   )
 
-(SwitchCondition 1 1)
-(SwitchCondition 1 2)
-(SwitchCondition 10 10)
+;; (SwitchCondition 1 1)
+;; (SwitchCondition 1 2)
+;; (SwitchCondition 10 10)
+
+(defn AnonymousFuncTest [] 
+  ((fn [x] (+ 5 x)) 3)
+  )
+
+
+(defn FileIOTest [fileName]
+  (def _val (slurp fileName))
+  (println _val)
+  )
+
+(FileIOTest "test.txt")
+
+
+
+
+
+
+
+
+
+
 
 
 
