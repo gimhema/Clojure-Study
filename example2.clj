@@ -109,6 +109,32 @@
 ;; (NestedIfConditionCheck "A" "Y")
 ;; (NestedIfConditionCheck "A" "B")
 
+(defn SwitchExample [x]
+  
+  (case x 1 (println "Value : 1")
+        10 (println "Value : 10")
+        (println "Default Area")
+        ) 
+  )
+
+;; (SwitchExample 1)
+;; (SwitchExample 10)
+;; (SwitchExample 15)
+
+(defn SwitchCondition [x y]
+  
+  (cond
+    (= x y) (println "X Y Same")
+    :else (println "Diffrent . . .")
+    ) 
+  )
+
+(SwitchCondition 1 1)
+(SwitchCondition 1 2)
+(SwitchCondition 10 10)
+
+
+
 
 
 
