@@ -143,11 +143,23 @@
   (println _val)
   )
 
-(FileIOTest "test.txt")
+;; (FileIOTest "test.txt")
 
+(defn StrTestFormatStr [val]
+  (println (format "Hi : %s", val)) 
+  )
+(defn StrTestFormatInteger [val]
+  (println (format "Hi : %d", val)))
 
+;; (StrTestFormatStr "HIHIHI")
+;; (StrTestFormatStr 1234)
 
+(defn StrTestTotal [StrVal]
+  (println (format "I will show this str count : %d " (count StrVal)))
+  (println (subs StrVal 2 5))
+  )
 
+(StrTestTotal "HiHelloMino")
 
 
 
