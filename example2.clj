@@ -166,12 +166,33 @@
   (+ ret x) 
   )
 
-(println (format "GetterTest : %d", (GetterTest 1)))
+;; (println (format "GetterTest : %d", (GetterTest 1)))
 
 
+(defn AtomExample []
+  (def someAtom (atom 1))
+  (println @someAtom) 
 
+  (reset! someAtom 5)
+  (println @someAtom)
+  )
 
+;; (AtomExample)
 
+(defn SetterTest []
+  (def sumT (atom 1))
+  
+  (loop [x 10]
+    (when (> x 1)
+      (swap! sumT inc)
+      (recur (- x 2)) 
+      ) 
+    ) 
+
+  (println @sumT) 
+  )
+
+(SetterTest)
 
 
 
