@@ -159,9 +159,14 @@
   (println (subs StrVal 2 5))
   )
 
-(StrTestTotal "HiHelloMino")
+;; (StrTestTotal "HiHelloMino")
 
+(defn GetterTest [x]
+  (def ret 1)
+  (+ ret x) 
+  )
 
+(println (format "GetterTest : %d", (GetterTest 1)))
 
 
 
