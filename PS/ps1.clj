@@ -27,8 +27,29 @@
   )
 )
 
+(defn modifyArrat [a]
+  
+  )
+
 (def vec1 (vector-of :int 9 7 8))
-(def vec2 (vector-of :int 4 5 6))
+(def vec2 (vector-of :int 4 12 6))
 ; (println (twoArrayExample vec1 vec2)) 
-(println (twoArrayOneWay vec1 vec2))
+; (println (twoArrayOneWay vec1 vec2))
+
+(defn compareTwoArray [a b]
+  (def idx (atom 0))
+  (def _a (atom 0))
+  (def _b (atom 0))
+  (doseq [x a]
+    (cond
+      (> (nth a @idx) (nth b @idx)) (swap! _a inc)
+      (< (nth a @idx) (nth b @idx)) (swap! _b inc)
+      )
+    (swap! idx inc)
+    )
+  [@_a @_b]
+  )
+
+(println (compareTwoArray vec1 vec2))
+
 
