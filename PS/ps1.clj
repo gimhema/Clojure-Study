@@ -19,9 +19,16 @@
     )
   )
 
+(defn twoArrayOneWay [a b]
+  (def idx (atom 0))
+  (doseq [elem1 a]
+    (println "A : " (nth a @idx) "B : " (nth b @idx))
+    (swap! idx inc)
+  )
+)
 
-(def vec1 (vector-of :int 1 2 3))
+(def vec1 (vector-of :int 9 7 8))
 (def vec2 (vector-of :int 4 5 6))
-(println (twoArrayExample vec1 vec2)) 
-
+; (println (twoArrayExample vec1 vec2)) 
+(println (twoArrayOneWay vec1 vec2))
 
