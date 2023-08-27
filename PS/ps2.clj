@@ -14,3 +14,8 @@
 ;;         (println "Check False Nested If Condition"))))
 
 
+(defn CalcSum [ar]
+  (reduce
+   (fn [val ar] (+ val ar))
+   0
+   ar))
