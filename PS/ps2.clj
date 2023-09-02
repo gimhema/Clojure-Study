@@ -19,3 +19,23 @@
    (fn [val ar] (+ val ar))
    0
    ar))
+
+
+(defn PNZ [arr]
+
+  (def size (atom 0))
+  (def pPostive (atom 0))
+  (def pNegative (atom 0))
+  (def pZero (atom 0))
+
+  (doseq [a arr]
+    (swap! size inc)
+    (cond
+      (> a 0) (swap! pPostive inc)
+      (< a 0) (swap! pNegative inc)
+      (= a 0) (swap! pZero inc))
+    ) 
+  [(float (/ @pPostive @size)) (float (/ @pNegative @size)) (float (/ @pZero @size))]
+)
+
+(println (PNZ [4 -1 2 3 0 -5])) 
